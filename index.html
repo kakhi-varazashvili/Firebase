@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js";></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js";></script>
+</head>
+<body>
+    <!-- <div class="main">
+    <form action="" class="register">
+
+    <input type="mail" placeholder="Register User">
+    <input type="password" placeholder="Enter password">
+    <input type="password" placeholder="Confirm password">
+    <button>Sign up</button>
+
+    </form> 
+
+    <form action="" class="login">
+
+    <input type="mail" placeholder="Mail">
+    <input type="password" placeholder="Password">
+    <button>Sign in</button>
+    </form>
+
+</div> -->
+
+
+    <script>
+         const firebaseConfig = {
+                apiKey: "AIzaSyDvjU4QvPrWVYc3uDMjOf3qN9-uBUdP9OU",
+                authDomain: "fir-97ff2.firebaseapp.com",
+                projectId: "fir-97ff2",
+                storageBucket: "fir-97ff2.appspot.com",
+                messagingSenderId: "226871064645",
+                appId: "1:226871064645:web:bb87d6e3e800b9fe82cb2c",
+                measurementId: "G-7XFD0HK22E"
+  };
+  firebase.initializeApp(firebaseConfig)
+    </script>
+
+    <script src="firebase.js"></script>
+</body>
+
+
+</html>
+
+<style>
+    .register, .login {
+        justify-content: center;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        margin: 50px;
+
+    }
+    input, button {
+        margin-top: 10px;
+    }
+    
+</style>
