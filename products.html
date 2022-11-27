@@ -10,17 +10,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js";></script>
 </head>
 <body>
-    <input type="text" placeholder="name" class="name">
-<input type="text" placeholder="city" class="city">
-<input type="text" placeholder="age" class="age">
-<input type="text" placeholder="mail" class="mail">
 
-<button class="save">save</button>
+<input type="text" placeholder="Add item" class="item">
+<input type="text" placeholder="color" class="color">
+<input type="text" placeholder="year" class="year">
 
-
-
-<a href="products.html">Add products</a>
-<!-- <a href="changepassword.html">change password</a>   -->
+<button class="add">add</button>
+<a href="index.html">User register</a>
 
     <script>
           const firebaseConfig = {
@@ -35,7 +31,7 @@
             firebase.initializeApp(firebaseConfig)
     </script>
 
-    <script src="firebase.js"></script>
+    <script src="products.js"></script>
 </body>
 
 

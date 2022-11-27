@@ -1,54 +1,49 @@
+let name = document.querySelector(".name")
+let city = document.querySelector(".city")
+let age = document.querySelector(".age")
+let mail = document.querySelector(".mail")
+let save = document.querySelector(".save")
+
+
 class User{
-    constructor(id,gender, name, surname, dateOfBirth){
-        this.id = id;
+    constructor(name,city,age,mail){
         this.name = name;
+        this.city = city;
         this.age = age;
-        this.owner = owner;
-    }
-}
-class FireBaseWorker{
-    firebaseRef;
-    constructor(){
-        this.firebaseRef = firebase.firestore()
-    }
-    async addAnimal(animalItem){
-        try{
-           var json = JSON.stringify(userItem)
-           var result = await this.firebaseRef.collection("User").add(JSON.parse(json))
-           console.log(result)
-        }
-        catch(error){
-            console.log("error: ",error);
-        }
-    }
-    async getUserById(id){
-        var result = await this.firebaseRef.collection("User").doc(id).get()
-        if(result.exists){
-            var tmp = result.data()
-            tmp.id = result.id
-            console.log(tmp)
-        }
-    }
-    async getUser(){
-        var arr = []
-        var result = await this.firebaseRef.collection("User").get()
-        result.forEach(i=>{
-            var tmp = i.data()
-            tmp.id = i.id
-            arr.push(tmp)
-        })
-        console.log(arr)
-    }
-    async deleteUserById(id){
-        var result = await this.firebaseRef.collection("user").doc(id).delete()
-        console.log("deleted")
+        this.mail = mail;
     }
 }
 
-var fbw = new FireBaseWorker()
-//var animal1 = new Animal("","Rock",7,"Beka")
-//var animal1 = new Animal("","arch",4,"gio")
-//fbw.addAnimal(animal1)
-// fbw.getAnimalById("VqGgWGGIwyYKzqMlxWzJ")
-// fbw.deleteAnimalsById("VqGgWGGIwyYKzqMlxWzJ")
-fbw.getAllAnimals()
+class FireBaseWorker{
+    firebaseRef;
+    constructor(){
+    this.firebaseRef = firebase.firestore()
+}
+async addUser(userItem){
+    try{
+        var json = JSON.stringify(userItem)
+        var result = await this.firebaseRef.collection("users").add(JSON.parse(json))
+        console.log(result)
+
+    }
+    catch(error){
+        console.log("error", error);
+    }
+}
+// async getuserById(id){
+//     var result = await this.firebaseRef.collection("users").doc(id).get()
+//     if(result.exists){
+//         var tmp = result.data()
+//         tmp.id = result.id
+//         console.log(tmp)
+//     }
+// }
+}
+
+save.addEventListener("click", function(){
+    var fbw = new FireBaseWorker()
+    var user = new User(name.value, city.value, age.value, mail.value)
+    fbw.addUser(user)
+    // fbw.getAnimalById("13CziPoNJhinO6mwNnwb")
+
+})

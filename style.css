@@ -1,0 +1,18 @@
+.dflex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
+    margin: 0 auto;
+}
+.register, .login {
+    justify-content: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+
+}
+input, button {
+    margin-top: 10px;
+}
